@@ -1,6 +1,6 @@
 # gofeed
 
-[![Build Status](https://travis-ci.org/mmcdole/gofeed.svg?branch=master)](https://travis-ci.org/mmcdole/gofeed) [![Coverage Status](https://coveralls.io/repos/github/mmcdole/gofeed/badge.svg?branch=master)](https://coveralls.io/github/mmcdole/gofeed?branch=master) [![Go Report Card](https://goreportcard.com/badge/github.com/mmcdole/gofeed)](https://goreportcard.com/report/github.com/mmcdole/gofeed) [![](https://godoc.org/github.com/mmcdole/gofeed?status.svg)](http://godoc.org/github.com/mmcdole/gofeed) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+[![Build Status](https://travis-ci.org/Sar-Kerson/gofeed.svg?branch=master)](https://travis-ci.org/Sar-Kerson/gofeed) [![Coverage Status](https://coveralls.io/repos/github/Sar-Kerson/gofeed/badge.svg?branch=master)](https://coveralls.io/github/Sar-Kerson/gofeed?branch=master) [![Go Report Card](https://goreportcard.com/badge/github.com/Sar-Kerson/gofeed)](https://goreportcard.com/report/github.com/Sar-Kerson/gofeed) [![](https://godoc.org/github.com/Sar-Kerson/gofeed?status.svg)](http://godoc.org/github.com/Sar-Kerson/gofeed) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 
 The `gofeed` library is a robust feed parser that supports parsing both [RSS](https://en.wikipedia.org/wiki/RSS), [Atom](<https://en.wikipedia.org/wiki/Atom_(standard)>) and [JSON](https://jsonfeed.org/version/1) feeds. The library provides a universal `gofeed.Parser` that will parse and convert all feed types into a hybrid `gofeed.Feed` model. You also have the option of utilizing the feed specific `atom.Parser` or `rss.Parser` or `json.Parser` parsers which generate `atom. Feed` , `rss.Feed` and `json.Feed` respectively.
 
@@ -185,8 +185,8 @@ First we must define a custom translator:
 import (
     "fmt"
 
-    "github.com/mmcdole/gofeed"
-    "github.com/mmcdole/gofeed/rss"
+    "github.com/Sar-Kerson/gofeed"
+    "github.com/Sar-Kerson/gofeed/rss"
 )
 
 type MyCustomTranslator struct {
@@ -288,7 +288,7 @@ The `DefaultRSSTranslator` , the `DefaultAtomTranslator` and the `DefaultJSONTra
 
 ## License
 
-This project is licensed under the [MIT License](https://raw.githubusercontent.com/mmcdole/gofeed/master/LICENSE)
+This project is licensed under the [MIT License](https://raw.githubusercontent.com/Sar-Kerson/gofeed/master/LICENSE)
 
 ## Credits
 

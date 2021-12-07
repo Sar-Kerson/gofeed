@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/mmcdole/gofeed"
+	"github.com/Sar-Kerson/gofeed"
 	"github.com/stretchr/testify/assert"
 )
 

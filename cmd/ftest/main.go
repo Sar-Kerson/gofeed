@@ -7,9 +7,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/mmcdole/gofeed"
-	"github.com/mmcdole/gofeed/atom"
-	"github.com/mmcdole/gofeed/rss"
+	"github.com/Sar-Kerson/gofeed"
+	"github.com/Sar-Kerson/gofeed/atom"
+	"github.com/Sar-Kerson/gofeed/rss"
 	"github.com/urfave/cli"
 )
 
