@@ -10,6 +10,7 @@ import (
 	"strings"
 
 	"github.com/mmcdole/gofeed/atom"
+	"github.com/mmcdole/gofeed/internal/shared"
 	"github.com/mmcdole/gofeed/json"
 	"github.com/mmcdole/gofeed/rss"
 )
@@ -41,6 +42,8 @@ type Parser struct {
 	rp             *rss.Parser
 	ap             *atom.Parser
 	jp             *json.Parser
+
+	ContentType string
 }
 
 // Auth is a structure allowing to
@@ -52,12 +55,13 @@ type Auth struct {
 }
 
 // NewParser creates a universal feed parser.
-func NewParser() *Parser {
+func NewParser(contentType string) *Parser {
 	fp := Parser{
-		rp:        &rss.Parser{},
-		ap:        &atom.Parser{},
-		jp:        &json.Parser{},
-		UserAgent: "Gofeed/1.0",
+		rp:          &rss.Parser{},
+		ap:          &atom.Parser{},
+		jp:          &json.Parser{},
+		UserAgent:   "Gofeed/1.0",
+		ContentType: contentType,
 	}
 	return &fp
 }
@@ -66,6 +70,11 @@ func NewParser() *Parser {
 // the universal gofeed.Feed.  It takes an
 // io.Reader which should return the xml/json content.
 func (f *Parser) Parse(feed io.Reader) (*Feed, error) {
+	if shared.IsContentTypeUTF8(f.ContentType) {
+		// if is utf-8, then filter invalid utf-8 symbol
+		feed = shared.NewValidUTF8Reader(feed)
+	}
+
 	// Wrap the feed io.Reader in a io.TeeReader
 	// so we can capture all the bytes read by the
 	// DetectFeedType function and construct a new
